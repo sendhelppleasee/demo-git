@@ -58,10 +58,12 @@ var mySlider
 function setup() {
 	createCanvas(windowWidth, windowHeight)
 	background(0)
+
+
 	mySlider = createSlider(0,255,128,.1) //min,max,step size
 	mySlider.position(width/2,25)
 	mySlider.input(()=>{
-		localStorage.setItem('mySlider',mySlider.value) //store current value in localstorage
+		localStorage.setItem('mySlider',mySlider.value()) //store current value in localstorage
 	})
 
 	if(localStorage.hasOwnProperty('mySlider')){
